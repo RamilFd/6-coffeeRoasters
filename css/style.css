@@ -1,0 +1,1185 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+body {
+    font-family: inter, sans-serif;
+    font-weight: 400;
+
+}
+.container {
+    max-width: 1120px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.container-header {
+    max-width: 1440px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+
+/* -------------------------  Шапка сайта  -------------------------- */
+
+.header {
+    padding-top: 48px;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 150%;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-header a {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    color: #ffffff;
+    width: 125px;
+}
+
+.menu-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+
+}
+
+.menu-inner__item {
+    margin-left: 25px;
+}
+
+.menu-inner__item a {
+    display: inline-block;
+    color: #ffffff;
+}
+
+.menu-inner__item a:hover {
+    text-decoration: underline 1px solid;
+}
+
+.menu-inner__item a:active {
+    transform: scale(0.97);
+}
+
+.burger {
+    display: none;
+}
+
+/* -------------------------  Адаптив шапка сайта  -------------------------- */
+
+@media (max-width: 991px) {
+
+    .burger {
+        display: block;
+        position: relative;
+        z-index: 10;
+        top: 6px;
+        width: 19px;
+        height: 13px;
+    }
+
+    .burger span {
+        position: absolute;
+        width: 19px;
+        height: 1px;
+        top: 5px;
+        background-color: white;
+        transition: 0.5s;
+    }
+
+    .burger span::before {
+        content: '';
+        position: absolute;
+        width: 19px;
+        height: 1px;
+        top: -5px;
+        background-color: white;
+        transition: 0.5s;
+    }
+
+    .burger span::after {
+        content: '';
+        position: absolute;
+        width: 19px;
+        height: 1px;
+        top: 5px;
+        background-color: white;
+        transition: 0.5s;
+    }
+
+    .burger--opened span::before {
+        transform: rotate(45deg);
+        transition: 0.5s;
+        top: 0px;
+    }
+    .burger--opened span::after {
+        transform: rotate(-45deg);
+        top: 0px;
+        transition: 0.5s;
+    }
+    .burger--opened span {
+        background-color: #111111;
+        opacity: 0.95;
+    }
+
+    .menu {
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        height: 1032px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #111111;
+        opacity: 0.95;
+        transform: translate(100%);
+        transition: 0.5s;
+        overflow: auto;
+    }
+
+    .header-row {
+        position: static;
+    }
+
+    .menu-inner {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding-left: 120px;
+        padding-top: 192px;
+        flex-direction: column;
+        gap: 48px;
+        font-size: 24px;
+        line-height: 200%;
+    }
+
+    .menu--opened {
+        transform: translate(0);
+        transition: 0.5s;
+
+    }
+
+    .menu-inner__item {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 575px) {
+    .menu-inner {
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .menu-inner {
+        gap: 30px;
+        font-size: 18px;
+    }
+}
+
+/* -------------------------  Главный баннер сайта  -------------------------- */
+
+.top-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1032px;
+    margin-top: -72px;
+}
+
+.top-row__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.link-top {
+    margin-top: 24px;
+}
+
+.title-top {
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 100%;
+    text-align: center;
+}
+
+.text-top {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 125%;
+    max-width: 640px;
+    text-align: center;
+}
+
+.link-top {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 300%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    padding: 0 41px
+}
+
+.link-top:hover {
+    border-radius: 7px;
+    border: 2px solid #FFFFFF;
+}
+
+.link-top:active {
+    transform: scale(0.97);
+}
+
+.top-row__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 1032px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* -------------------------  Адаптив главный баннер сайта  -------------------------- */
+
+@media (max-width: 992px) {
+    .title-top {
+        font-size: 40px;
+        line-height: 240%;
+    }
+    .text-top {
+        font-size: 24px;
+        line-height: 200%;
+    }
+    
+}
+@media (max-width: 437px) {
+    .text-top {
+        font-size: 22px;
+        line-height: 140%;
+    }
+    .title-top {
+        font-size: 36px;
+        line-height: 140%;
+    }
+}
+
+/* -------------------------  Выгоды  -------------------------- */
+
+.benefits-row {
+    position: relative;
+    display: flex;
+    height: 600px;
+    align-items: center;
+    gap: 416px;
+}
+
+.benefits-block {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.benefits-inner-1 {
+    display: flex;
+    gap: 16px;
+}
+
+.benefits-inner-2 {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 16px;
+}
+
+.benefits-inner-1__content dt {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: right;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.benefits-inner-1__content dd {
+    font-size: 12px;
+    line-height: 200%;
+    text-align: right;
+    color: #000000;
+}
+
+.benefits-inner-2__content dt {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: left;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.benefits-inner-2__content dd {
+    font-size: 12px;
+    line-height: 200%;
+    text-align: left;
+    color: #000000;
+}
+
+.benefits-inner__img {
+    display: inline-block;
+    height: 64px;
+    
+}
+
+.benefits-row__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* -------------------------  Адаптив выгоды  -------------------------- */
+
+@media (max-width: 1030px) {
+    .benefits-row {
+        gap: 380px
+    }
+}
+
+@media (max-width: 992px) {
+    .benefits-row {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 48px;
+        padding-left: 25px;
+        align-items: flex-start;
+        height: 863px;
+    }
+    .benefits-block {
+        max-width: 350px;
+    }
+    .benefits-inner-1 {
+        flex-direction: row-reverse;
+    }
+    .benefits-inner-1__content dt,
+    .benefits-inner-1__content dd {
+        text-align: left;
+    }
+    .benefits-row__img {
+        height: 863px;
+        background-position: -396px 0px;
+        margin-left: 15px;
+    }    
+}
+
+@media (max-width: 550px) {
+    .benefits-row {
+        padding-left: 0px;
+        gap: 36px;
+    }
+    .benefits-row__img {
+        background-position: -546px 0px;
+    }
+    .benefits-block {
+        gap: 36px;
+    }
+}
+
+/* -------------------------  Оформление заказа  -------------------------- */
+
+.cta {
+    position: relative;
+    height: 432px;
+}
+.cta-image {
+    position: relative;
+}
+
+.cta-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 432px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cta-block {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 432px;
+    padding: 0 15px;
+}
+.cta-style-1,
+.cta-style-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    color: #111111;
+}
+.cta-style-1 {
+    color: #ffffff;
+}
+.cta-style__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
+    text-align: center;
+}
+
+.cta-style__line {
+    margin-top: -8px;
+}
+
+.cta-style__text {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* -------------------------  Адаптив оформление заказа  -------------------------- */
+
+@media (max-width: 630px) {
+    .cta-image img {
+        height: 480px;
+    }
+    .cta-block {
+        height: 480px;
+    }
+    .cta {
+        height: 480px;
+    }
+}
+
+@media (max-width: 500px) {
+    .cta-image img {
+        object-position: -550px;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .cta-style__title{
+        font-size: 34px;
+    }
+}
+
+/* -------------------------  Наше меню   -------------------------- */
+
+.ourmenu {
+    padding: 96px 0px;
+    background: #EEEEEE;
+}
+
+.food-menu,
+.drinks-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.fd-menu__block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.fd-menu__inner {
+    display: flex;
+    gap: 24px;
+    color: #000000;
+    justify-content: space-between;
+}
+
+.fd-menu__img {
+    display: block;
+    width: 72px;
+    height: 72px;
+}
+
+.fd-menu__body {
+    display: flex;
+    gap: 24px;
+}
+
+.fd-menu__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+}
+
+.fd-menu__title {
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.fd-menu__text {
+    font-size: 12px;
+    line-height: 200%;
+    text-align: left;
+}
+
+.fd-menu__price {
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.ourmenu-tab-links {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
+.ourmenu-tab__link {
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #000000;
+    cursor: pointer;
+}
+
+.ourmenu-tab__link:hover {
+    transform: scale(1.07);
+}
+
+.ourmenu-tab__link:active {
+    transform: scale(1.03);
+}
+
+.ourmenu-tab__link--active {
+    text-decoration-line: underline;
+}
+
+/* -------------------------  Адаптив наше меню   -------------------------- */
+
+@media (max-width: 992px) {
+    .food-menu,
+    .drinks-menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .ourmenu {
+        padding: 70px 0px;
+    }
+    .food-menu,
+    .fd-menu__block {
+        gap: 40px;
+    }
+    .fd-menu__inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .fd-menu__body {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .fd-menu__price {
+        display: flex;
+        align-items: center;
+    }
+    .fd-menu__img {
+        margin: 0 auto;
+    }
+    .fd-menu__content {
+        align-items: center;
+    }
+    .fd-menu__text {
+        text-align: center;
+    }
+}
+
+/* -------------------------  Отзывы  -------------------------- */
+
+
+/*----Слайдер----*/
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide h2 {
+    position: absolute;
+    top: 96px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    padding: 0 15px;
+  }
+  .swiper-slide h2::after {
+    position: absolute;
+    top: 72px;
+    left: 45px;
+    content: '';
+    width: 190px;
+    height: 1px;
+    background: #EEEEEE;
+  }
+  .swiper-slide p {
+    position: absolute;
+    top: 216px;
+    max-width: 753px;
+    padding: 0 15px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 504px;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+
+  .swiper-pagination-bullet {
+    width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,11px));
+    height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,11px));
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius,50%);
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #FFFFFF;
+}
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next,
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next,
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev,
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+    transform: scale(1);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap,5px);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, 
+.swiper-pagination-bullets.swiper-pagination-horizontal, 
+.swiper-pagination-custom, 
+.swiper-pagination-fraction {
+    bottom: var(--swiper-pagination-bottom,102px);
+}
+
+@media (max-width: 767px) {
+    .swiper-horizontal>.swiper-pagination-bullets, 
+    .swiper-pagination-bullets.swiper-pagination-horizontal, 
+    .swiper-pagination-custom, 
+    .swiper-pagination-fraction {
+        bottom: var(--swiper-pagination-bottom,60px);
+    }
+}
+
+@media (max-width: 455px) {
+    .swiper-horizontal>.swiper-pagination-bullets, 
+    .swiper-pagination-bullets.swiper-pagination-horizontal, 
+    .swiper-pagination-custom, 
+    .swiper-pagination-fraction {
+        bottom: var(--swiper-pagination-bottom,30px);
+    }
+    .swiper-slide h2 {
+        top: 70px;
+    }
+    .swiper-slide p {
+        top: 190px;
+        font-size: 15px;
+    }
+}
+
+/*-----------------------  Новости  --------------------------*/
+
+.news {
+    padding: 96px 0px;
+    background: #EEEEEE;
+}
+
+.news-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.news-cards {
+    display: flex;
+    gap: 32px;
+}
+
+.news-cards__card {
+    width: 340px;
+}
+
+.card-figure__img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 24px;
+}
+
+.card-figcaption {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color:#000000;
+}
+
+.card-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.card-link {
+    display: block;
+    font-size: 12px;
+    line-height: 200%;
+    color: #000000;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+.card-link:active {
+    transform: scaleY(1.05);
+}
+
+.card-link {
+    position: relative;
+    left: 8px;
+}
+
+.card-link::before {
+    position: relative;
+    bottom: 5px;
+    right: 8px;
+    content: '';
+    width: 12px;
+    height: 1px;
+    background: #000000;
+    display: inline-block;
+}
+
+/*-----------------------  Адаптив новости  --------------------------*/
+
+@media (max-width: 992px) {
+    .news-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+    }
+    .news-cards__card {
+        width: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    .news-cards__card {
+        width: 430px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .news-cards__card {
+        width: 340px;
+    }
+}
+
+@media (max-width: 400px) {
+    .news {
+        padding: 70px 0px;
+    }
+}
+
+@media (max-width: 375px) {
+    .news-cards__card {
+        width: 250px;
+    }
+}
+
+/*-----------------------  Локация  --------------------------*/
+
+.location {
+    position: relative;
+    height: 815px;
+}
+
+.location-image {
+    position: relative;
+}
+
+.location-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 815px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.location-body {
+    position: absolute;
+    padding: 96px 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location-cards {
+    display: flex;
+    gap: 170px;
+    margin-top: 24px;
+    justify-content: space-between;
+    color: #EEEEEE;
+}
+
+.location-cards__card {
+    display: flex;
+    flex-direction: column;
+}
+
+.location-card-figure__img {
+    margin-bottom: 24px;
+}
+
+.location-card-figcaption {
+    font-size: 24px;
+    line-height: 200%;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.location-card-text {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center; 
+    max-width: 255px;
+}
+
+/*-----------------------  Адаптив локация  --------------------------*/
+
+@media (max-width: 1199px) {
+    .location-cards {
+        gap: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .location-cards {
+        flex-direction: column;
+        gap: 48px;
+    }
+    .location-image img {
+        height: 1701px;
+    }
+    .location {
+        height: 1701px;
+    }
+}
+
+@media (max-width: 400px) {
+    .location-body {
+        padding: 70px 0px;
+    }
+}
+
+/*-----------------------  Обратная связь  --------------------------*/
+
+.newsletter {
+    padding: 96px 0px;
+    background: #111111;
+    color: #FFFFFF;
+}
+.newsletter-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+.newsletter-form__email {
+    padding: 0px 15px;
+    border: 1px solid #FFFFFF;
+    font-size: 16px;
+    line-height: 300%;
+    color: #FFFFFF;
+}
+.newsletter-form__email::placeholder {
+    color: #ffffff;
+}
+
+.newsletter-form__submit {
+    max-width: 173px;
+    padding: 0px 41px;
+    border: 1px solid #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 300%;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+.newsletter-form__submit:hover {
+    background: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.newsletter-form__submit:active {
+    transform: scale(0.97);
+}
+
+/*-----------------------  Адаптив обратная связь  --------------------------*/
+
+@media (max-width: 500px) {
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width:400px) {
+    .newsletter {
+        padding: 70px 0px;
+    }
+}
+
+/*-----------------------  Подвал сайта  --------------------------*/
+
+.footer {
+    padding: 48px 0px;
+    background: #111111;
+}
+.footer-body {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-body__copiright {
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 200%;
+}
+.footer-body__list {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+}
+.footer-body__list-item a {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 150%;
+}
+.footer-body__list-item a:hover {
+    text-decoration: underline;
+}
+.footer-body__list-item a:active {
+    position: relative;
+    top: 0.7px;
+}
+.footer-body__links {
+    display: flex;
+    gap: 26px;
+    justify-content: center;
+    
+}
+.footer-body__links-link {
+    width: 24px;
+    height: 24px;
+}
+.footer-body__links-link:hover {
+    transform: scale(1.2);
+}
+.footer-body__links-link:active {
+    position: relative;
+    top: 1px;
+}
+
+/*-----------------------  Адаптив подвал сайта  --------------------------*/
+
+@media (max-width:992px) {
+    .footer-body__list {
+        gap: 34px;
+    }
+}
+
+@media (max-width:767px) {
+    .footer-body__list {
+        display: none;
+    }
+}
+@media (max-width:500px) {
+    .footer-body {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 36px;
+    }
+}
+
+/*-----------------------  Модальное окно  --------------------------*/
+
+.popup-fade {
+    position: fixed;
+    z-index: 15;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #1b2222;
+    opacity: 0.95;
+    overflow: auto;
+    display: none;
+}
+.popup-fade--active {
+    display: block;
+}
+.popup-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+}
+.popup-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 30px 20px;
+}
+.popup-title {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.popup-text {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+.popup-form input {
+    display: block;
+    border: 1px solid #696969;
+    border-radius: 5px;
+    height: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.btn-pop-sub {
+    display: block;
+    padding: 10px;
+    background: #08e1e1;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid black;
+    margin-bottom: 40px;
+    margin-top: 12px;
+}
+.btn-pop-sub:hover {
+    background: #02ffff;
+    transform: scale(0.97);
+}
+.btn-pop-sub:active {
+    position: relative;
+    top: 1px;
+}
+.btn-pop-close:hover {
+    text-decoration: underline;
+}
+.btn-pop-close:active {
+    position: relative;
+    top: 1px;
+}
+.wrapper {
+    position: relative;
+}
+.wrapper--modal {
+    height: 100vh;
+    overflow: hidden;
+}
+
+@media (max-width:400px) {
+    .popup-form {
+        width: 250px;
+    }
+}
